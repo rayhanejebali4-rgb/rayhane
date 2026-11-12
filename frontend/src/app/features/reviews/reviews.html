@@ -1,0 +1,241 @@
+<div class="reviews-container">
+
+  <div class="page-header">
+    <span class="subtitle">STUDENT MICRO-JOB MARKETPLACE</span>
+
+    <h1>Reviews & Ratings</h1>
+
+    <p>
+      Share your experience and help students build trust.
+    </p>
+  </div>
+
+
+  <!-- ADD REVIEW -->
+  <div class="review-form-card">
+
+    <h2>✍️ Add a Review</h2>
+
+    <p class="form-description">
+      Tell us about your experience
+    </p>
+
+    <form (ngSubmit)="addReview()">
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label>Reviewer ID</label>
+
+          <input
+            type="number"
+            name="reviewerId"
+            [(ngModel)]="review.reviewerId"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>Reviewed User ID</label>
+
+          <input
+            type="number"
+            name="reviewedUserId"
+            [(ngModel)]="review.reviewedUserId"
+            required
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- RATING -->
+      <div class="form-group">
+
+        <label>Rating</label>
+
+        <div class="star-rating">
+
+          <input
+            type="radio"
+            id="star5"
+            name="rating"
+            [value]="5"
+            [(ngModel)]="review.rating"
+          >
+
+          <label for="star5">★</label>
+
+
+          <input
+            type="radio"
+            id="star4"
+            name="rating"
+            [value]="4"
+            [(ngModel)]="review.rating"
+          >
+
+          <label for="star4">★</label>
+
+
+          <input
+            type="radio"
+            id="star3"
+            name="rating"
+            [value]="3"
+            [(ngModel)]="review.rating"
+          >
+
+          <label for="star3">★</label>
+
+
+          <input
+            type="radio"
+            id="star2"
+            name="rating"
+            [value]="2"
+            [(ngModel)]="review.rating"
+          >
+
+          <label for="star2">★</label>
+
+
+          <input
+            type="radio"
+            id="star1"
+            name="rating"
+            [value]="1"
+            [(ngModel)]="review.rating"
+          >
+
+          <label for="star1">★</label>
+
+        </div>
+
+
+        <p class="rating-text">
+          {{ review.rating }} / 5 stars
+        </p>
+
+      </div>
+
+
+      <!-- COMMENT -->
+      <div class="form-group">
+
+        <label>Comment</label>
+
+        <textarea
+          name="comment"
+          [(ngModel)]="review.comment"
+          placeholder="Write your experience here..."
+          required>
+        </textarea>
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="submit-btn">
+        Add Review →
+      </button>
+
+    </form>
+
+  </div>
+
+
+  <!-- ALL REVIEWS -->
+  <div class="reviews-section">
+
+    <div class="section-heading">
+
+      <div>
+
+        <h2>All Reviews</h2>
+
+        <p>
+          What students say about their experience
+        </p>
+
+      </div>
+
+      <span class="review-count">
+        {{ reviews.length }} Reviews
+      </span>
+
+    </div>
+
+
+    <div class="reviews-grid">
+
+      <div
+        class="review-card"
+        *ngFor="let r of reviews">
+
+        <div class="card-top">
+
+          <div class="user-icon">
+            👤
+          </div>
+
+          <div class="user-info">
+
+            <h3>
+              Student #{{ r.reviewerId }}
+            </h3>
+
+            <span>
+              Reviewed user #{{ r.reviewedUserId }}
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="rating">
+
+          <span
+            *ngFor="let star of [1,2,3,4,5]"
+            [class.active]="star <= r.rating">
+            ★
+          </span>
+
+          <small>
+            {{ r.rating }}/5
+          </small>
+
+        </div>
+
+
+        <p class="comment">
+          {{ r.comment }}
+        </p>
+
+
+        <div class="card-footer">
+
+          <span>
+            Student Review
+          </span>
+
+          <span>
+            ✓ Verified Review
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

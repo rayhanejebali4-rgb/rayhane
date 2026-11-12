@@ -1,0 +1,155 @@
+
+<div class="freelancer-container">
+
+  <div class="page-header">
+    <span class="subtitle">STUDENT MICRO-JOB MARKETPLACE</span>
+    <h1>Etudiant Reviews 💗</h1>
+    <p>Share your experience with a Etudiant.</p>
+  </div>
+
+  <div class="review-form-card">
+    <h2>✍️ Review a Etudiant</h2>
+    <p class="form-description">
+      Tell us about the Etudiant's work.
+    </p>
+
+    <form (ngSubmit)="addReview()">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Client ID</label>
+          <input type="number"
+            name="reviewerId"
+            [(ngModel)]="review.reviewerId"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label>Etudiant ID</label>
+          <input type="number"
+            name="reviewedUserId"
+            [(ngModel)]="review.reviewedUserId"
+            required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Rating</label>
+
+        <div class="star-rating">
+          <input type="radio" id="fstar5" name="rating"
+            [value]="5" [(ngModel)]="review.rating">
+          <label for="fstar5">★</label>
+
+          <input type="radio" id="fstar4" name="rating"
+            [value]="4" [(ngModel)]="review.rating">
+          <label for="fstar4">★</label>
+
+          <input type="radio" id="fstar3" name="rating"
+            [value]="3" [(ngModel)]="review.rating">
+          <label for="fstar3">★</label>
+
+          <input type="radio" id="fstar2" name="rating"
+            [value]="2" [(ngModel)]="review.rating">
+          <label for="fstar2">★</label>
+
+          <input type="radio" id="fstar1" name="rating"
+            [value]="1" [(ngModel)]="review.rating">
+          <label for="fstar1">★</label>
+        </div>
+
+        <p class="rating-text">
+          {{ review.rating }} / 5 stars
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label>Comment</label>
+        <textarea
+          name="comment"
+          [(ngModel)]="review.comment"
+          placeholder="Write your experience with the Etudiants..."
+          required>
+        </textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        Submit Review →
+      </button>
+
+    </form>
+  </div>
+
+  <div class="reviews-section">
+    <h2>Etudiant Reviews</h2>
+
+    <div class="reviews-grid">
+      <div class="review-card" *ngFor="let r of reviews">
+
+        <h3>Etudiant #{{ r.reviewedUserId }}</h3>
+
+        <p>Client #{{ r.reviewerId }}</p>
+
+        <div class="rating">
+          <span *ngFor="let star of [1,2,3,4,5]"
+            [class.active]="star <= r.rating">★</span>
+          {{ r.rating }}/5
+        </div>
+
+        <p class="comment">{{ r.comment }}</p>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- All Freelancer Reviews -->
+<div class="reviews-section">
+
+  <div class="section-heading">
+    <div>
+      <h2>All Etudiants Reviews</h2>
+      <p>What clients say about Etudiants</p>
+    </div>
+
+    <span class="review-count">
+      {{ reviews.length }} Reviews
+    </span>
+  </div>
+
+  <div class="reviews-grid">
+
+    <div class="review-card" *ngFor="let r of reviews">
+
+      <div class="card-top">
+        <div class="user-icon">👤</div>
+
+        <div class="user-info">
+          <h3>Etudiant #{{ r.reviewedUserId }}</h3>
+          <span>Reviewed by Client #{{ r.reviewerId }}</span>
+        </div>
+      </div>
+
+      <div class="rating">
+        <span
+          *ngFor="let star of [1,2,3,4,5]"
+          [class.active]="star <= r.rating">
+          ★
+        </span>
+        <small>{{ r.rating }}/5</small>
+      </div>
+
+      <p class="comment">{{ r.comment }}</p>
+
+      <div class="card-footer">
+        <span>Etudiant Review</span>
+        <span>✓ Verified Review</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,393 @@
+<div class="landing-page">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+
+    <a routerLink="/" class="logo">
+      <span class="logo-icon">S</span>
+      Student<span>Market</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#how-it-works">How It Works</a>
+      <a routerLink="/reviews">Reviews</a>
+    </div>
+
+    <div class="nav-actions">
+      <button class="login-btn">Log In</button>
+      <button class="signup-btn">Get Started</button>
+    </div>
+
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        <span>🎓</span>
+        Built for Students
+      </div>
+
+      <h1>
+        Small Jobs.
+        <span>Big Opportunities.</span>
+      </h1>
+
+      <p>
+        Connect with talented students, find opportunities,
+        and turn your skills into real experience.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn">
+          Find a Job →
+        </button>
+
+        <button class="secondary-btn">
+          Post a Job
+        </button>
+      </div>
+
+      <div class="hero-stats">
+
+        <div>
+          <strong>1K+</strong>
+          <span>Students</span>
+        </div>
+
+        <div>
+          <strong>500+</strong>
+          <span>Jobs Posted</span>
+        </div>
+
+        <div>
+          <strong>98%</strong>
+          <span>Success Rate</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- HERO IMAGE -->
+    <div class="hero-image">
+
+      <div class="floating-card card-one">
+        🎨 Graphic Design
+        <small>New opportunity</small>
+      </div>
+
+      <div class="illustration">
+
+        <div class="illustration-circle">
+          🎓
+        </div>
+
+        <h2>Start Your Journey!</h2>
+
+        <p>
+          Learn · Work · Earn
+        </p>
+
+      </div>
+
+      <div class="floating-card card-two">
+        ⭐ 5.0 Rating
+        <small>Trusted students</small>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CATEGORIES -->
+  <section class="categories" id="categories">
+
+    <div class="section-header">
+
+      <span class="section-label">
+        EXPLORE OPPORTUNITIES
+      </span>
+
+      <h2>
+        Find Your Perfect <span>Gig</span>
+      </h2>
+
+      <p>
+        Discover small jobs that match your skills and interests.
+      </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+      <div
+        class="category-card"
+        *ngFor="let category of categories"
+      >
+
+        <div class="category-icon">
+          {{ category.icon }}
+        </div>
+
+        <h3>
+          {{ category.name }}
+        </h3>
+
+        <p>
+          {{ category.jobs }}
+        </p>
+
+        <span class="arrow">
+          →
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how-it-works">
+
+    <div class="section-header">
+
+      <span class="section-label">
+        SIMPLE & EASY
+      </span>
+
+      <h2>
+        How It <span>Works</span>
+      </h2>
+
+      <p>
+        Start earning and gaining experience in just a few simple steps.
+      </p>
+
+    </div>
+
+
+    <div class="steps">
+
+      <div
+        class="step"
+        *ngFor="let step of steps"
+      >
+
+        <div class="step-number">
+          {{ step.number }}
+        </div>
+
+        <h3>
+          {{ step.title }}
+        </h3>
+
+        <p>
+          {{ step.description }}
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURES -->
+  <section class="features">
+
+    <div class="feature-content">
+
+      <span class="section-label">
+        WHY STUDENT MARKET?
+      </span>
+
+      <h2>
+        More Than Just
+        <span>A Job Board</span>
+      </h2>
+
+      <p>
+        Student Micro-Job Marketplace helps students
+        build experience, earn money, and connect with
+        other talented students.
+      </p>
+
+      <div class="feature-list">
+
+        <div class="feature-item">
+          <span>✓</span>
+          <div>
+            <h3>Build Real Experience</h3>
+            <p>
+              Work on real projects and improve your skills.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <span>✓</span>
+          <div>
+            <h3>Flexible Opportunities</h3>
+            <p>
+              Choose jobs that fit your schedule.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <span>✓</span>
+          <div>
+            <h3>Trusted Community</h3>
+            <p>
+              Connect with students and build your network.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="feature-visual">
+
+      <div class="feature-card">
+
+        <div class="feature-icon">
+          💼
+        </div>
+
+        <h3>
+          Your Skills Matter
+        </h3>
+
+        <p>
+          Turn what you know into real opportunities.
+        </p>
+
+        <div class="mini-stats">
+
+          <div>
+            <strong>+250</strong>
+            <span>Projects</span>
+          </div>
+
+          <div>
+            <strong>+500</strong>
+            <span>Students</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <div class="cta-content">
+
+      <span class="section-label">
+        READY TO START?
+      </span>
+
+      <h2>
+        Your Next Opportunity
+        <span>Starts Here.</span>
+      </h2>
+
+      <p>
+        Join Student Micro-Job Marketplace and turn
+        your skills into opportunities.
+      </p>
+
+      <div class="cta-buttons">
+
+        <button class="primary-btn">
+          Get Started →
+        </button>
+
+        <button class="secondary-btn">
+          Explore Jobs
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-content">
+
+      <div class="footer-brand">
+
+        <a routerLink="/" class="logo">
+          <span class="logo-icon">S</span>
+          Student<span>Market</span>
+        </a>
+
+        <p>
+          Connecting students with opportunities.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a routerLink="/">
+          Home
+        </a>
+
+        <a href="#categories">
+          Categories
+        </a>
+
+        <a href="#how-it-works">
+          How It Works
+        </a>
+
+        <a routerLink="/reviews">
+          Reviews
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+      <p>
+        © 2026 Student Micro-Job Marketplace. All rights reserved.
+      </p>
+    </div>
+
+  </footer>
+
+</div>
+
+
+
+
+
+
+
